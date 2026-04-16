@@ -74,20 +74,20 @@ public class Switch {
         String day = scanner.nextLine();
 
         day = day.contains("요일") ? day : day + "요일";
-        double discountRate;
+        double discountRate = 0.0;
 
         switch (day) {
             case "월":
-                discountRate = 0.9;
+                discountRate = 0.1;
                 break;
             case "화": case "수": case "목":
-                discountRate = 0.95;
+                discountRate = 0.05;
                 break;
             case "금": case "토": case "일":
-                discountRate = 0.8;
+                discountRate = 0.2;
                 break;
             default:
-                System.out.println(price);
+                System.out.println("올바른 요일이 아닙니다: " + day);
         }
         double discountPrice = price * discountRate;
         double finalPrice = price - discountPrice;
