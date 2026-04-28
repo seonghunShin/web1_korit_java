@@ -21,6 +21,9 @@
 2. 최초 push시, 원격 저장소와 로컬을 동기화
 - git push -u origin main
 
+https://github.com/seonghunShin/web1_korit_java.git
+
+
 
 
 
