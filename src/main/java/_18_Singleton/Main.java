@@ -1,5 +1,7 @@
 package _18_Singleton;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Logger l1 = Logger.getInstance();
