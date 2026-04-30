@@ -24,8 +24,17 @@ public class Reservation {
     // 필드가 많은 상황에서 - 오버로딩으로는 경우의 수가 너무 많음
 
     // 1.private로 외부 생성을 막는다
-    private Reservation() {
+    private Reservation(Builder builder) {
+        // 3. 빌더 객체의 필드값을 복사해 옴.
+        this.username = builder.username;
+        this.date = builder.date;
+        this.price = builder.price;
+        this.personCount = builder.personCount;
+    }
 
+    // 외부에서 Builder를 접근하기 쉽게
+    public static Builder builder() {
+        return new Builder(); // 빌더의 기본 생성자 (필드 초기화 안되어있음)
     }
 
 
@@ -57,6 +66,14 @@ public class Reservation {
         public Builder price(int price) {
             this.price = price;
             return this;
+        }
+
+        // 4. 바깥 클래스의 private 생성자를 빌더가 호출
+        // static 내부 클래스는 다른 클래스 취급이지만,
+        // private 필드, 메서드 접근이 가능하다!
+        public Reservation build() {
+            Reservation r = new Reservation(this);
+            return r;
         }
     }
 

@@ -31,6 +31,22 @@ public class Main {
         System.out.println("익명 클래스의 진짜 이름은?");
         System.out.println(ch.getClass().getName());
 
+        // 순서가 바뀌거나 몇개가 빠져도 실행이 됨.
+        Reservation r = Reservation.builder() // 깡통빌더객체 리턴
+                .username("홍길동")    // username 초기화된 빌더객체
+                .date("2026-04-30")   // date 초기화된 빌더객체
+                .personCount(4)
+                .price(89000)
+                .build();   // Reservation 생성자를 내부에서 호출
+
+        LombokUser u = LombokUser.builder()
+                .username("롬복")
+                .password("lombok")
+                .build();
+
+        System.out.println(u.getUsername());
+        u.setPassword("롬복이다!");
+
     }
     Yes y = new Yes() {
         @Override
