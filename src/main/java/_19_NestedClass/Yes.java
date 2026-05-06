@@ -1,5 +1,5 @@
 package _19_NestedClass;
 
-public class Yes {
-
+public interface Yes {
+    void yes();
 }
