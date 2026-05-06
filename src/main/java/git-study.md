@@ -21,6 +21,15 @@
 2. 최초 push시, 원격 저장소와 로컬을 동기화
 - git push -u origin main
 
+### 추가내용
+
+1. git repository 다운받기
+- git clone 레포지토리 주소(html)
+
+2. 원격 저장소가 버전이 더 높을 경우
+- git fetch (원격저장소와 통신해서 최신내역 확인)
+- git pull (원격저장소의 버전으로 로컬 덮어쓰기)
+
 https://github.com/seonghunShin/web1_korit_java.git
 
 https://github.com/elikese/web1_korit_java

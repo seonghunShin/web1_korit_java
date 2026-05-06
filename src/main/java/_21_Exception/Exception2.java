@@ -1,6 +1,6 @@
 package _21_Exception;
 
-public class Exception02 {
+public class Exception2 {
     // 디스패처: 분배한다, servlet: 요청을
     public static void dispatcherServlet() {
         // 예외를 처리하는 곳을 한군데로 격리
