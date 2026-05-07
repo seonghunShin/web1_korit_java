@@ -113,5 +113,44 @@ public class MapMain {
 
         System.out.println(gradeMap);
 
+        // 학년별로 국어평균, 영어평균, 수학평균을 구해서
+        /*
+                {
+                    1: {
+                        "korAvg": 80,
+                        "engAvg": 90,
+                        "mathAvg": 100
+                    },
+                    2: {
+                        "korAvg": 80,
+                        "engAvg": 90,
+                        "mathAvg": 100
+                    }
+                }
+         */
+
+        Map<Integer, Map<String, Integer>> avgMap = new HashMap<>();
+        Set<Integer> grades = gradeMap.keySet();
+
+        for (int grade: gradeMap.keySet()) {
+            List<Student> sts = gradeMap.get(grade);
+            int korTotal = 0;
+            int engTotal = 0;
+            int mathTotal = 0;
+            for (Student s : sts) {
+                korTotal += s.getKor();
+                engTotal += s.getEng();
+                mathTotal += s.getMath();
+            }
+            Map<String, Integer> avgDetailMap = new HashMap<>();
+            avgDetailMap.put("korAvg", korTotal / sts.size());
+            avgDetailMap.put("engAvg", engTotal / sts.size());
+            avgDetailMap.put("mathAvg", mathTotal / sts.size());
+
+            avgMap.put(grade, avgDetailMap);
+            System.out.println(avgMap);
+
+        }
+
     }
 }
